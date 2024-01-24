@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    #active: native is being used for classpath and local file system
+    #active: native
+    active: git
+  cloud:
+    config:
+      server:
+        #native:
+          #search-locations: "classpath:/config"
+        git:
+          uri: "https://github.com/RohitIndia/ms-config.git"
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+
+encrypt:
+  key: "jJ4vs4QebuogLOlf9YLDLGbgMqfSwRKM"
+
+server:
+   port: 8071
